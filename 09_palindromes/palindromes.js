@@ -1,5 +1,3 @@
-// TO DO: update and store original palindrome parameter in a new variable that maybe uppers it, but definitely excludes the spaces
-
 const palindromes = function (palindrome) {
     // I think I want to store the parameter in a new variable where all the spaces have been removed
     let updateOrigPali = palindrome.replace(/\s/g, "").replace(/,/g, "");
@@ -13,7 +11,7 @@ const palindromes = function (palindrome) {
     for (let x in updateOrigPali) {
         currentChar = updateOrigPali.charAt(x);
 
-        let pattern = /[a-zA-Z\s,]/; // matches any letter in the English alphabet (uppercase or lowercase)
+        let pattern = /[a-zA-Z\s,]/; // matches any letter in the English alphabet (uppercase or lowercase), includes spaces and commas
         if (pattern.test(currentChar)) {
             // console.log("The letter is in the English alphabet.");
             alphaCharUpper = currentChar.toUpperCase();
@@ -30,15 +28,15 @@ const palindromes = function (palindrome) {
     // console.log(mergedString);
 
     if (mergedString === updateOrigPali.toUpperCase()) {
-        console.log(true);
-        // return true;
+        //console.log(true);
+        return true;
     } else {
-        console.log(false);
-        // return false;
+        //console.log(false);
+        return false;
     }
 };
 
-palindromes("A car, a man, a maraca.");
+// palindromes("A car, a man, a maraca.");
 
 // try running the test again but with console.logs in the spec file to see the difference between the given and expected output
 // todo: how to account for spaces between words? and commas?
