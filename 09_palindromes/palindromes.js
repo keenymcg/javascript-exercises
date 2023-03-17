@@ -2,7 +2,7 @@
 
 const palindromes = function (palindrome) {
     // I think I want to store the parameter in a new variable where all the spaces have been removed
-    let updateOrigPali = palindrome.replace(/\s/g, "");
+    let updateOrigPali = palindrome.replace(/\s/g, "").replace(/,/g, "");
     // console.log(updateOrigPali);
 
     let currentChar = "";
@@ -25,9 +25,9 @@ const palindromes = function (palindrome) {
         }
     }
     let mergedArray = letterArray.concat(puncArray);
-    console.log(mergedArray);
+    // console.log(mergedArray);
     let mergedString = mergedArray.join('');
-    console.log(mergedString);
+    // console.log(mergedString);
 
     if (mergedString === updateOrigPali.toUpperCase()) {
         console.log(true);
@@ -38,7 +38,7 @@ const palindromes = function (palindrome) {
     }
 };
 
-palindromes("tac o, o cat!");
+palindromes("A car, a man, a maraca.");
 
 // try running the test again but with console.logs in the spec file to see the difference between the given and expected output
 // todo: how to account for spaces between words? and commas?
